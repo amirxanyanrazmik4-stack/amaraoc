@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amaranoc.am - Գլխավոր</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Amaranoc<span>.am</span></a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Գլխավոր</a>
+        <a href="carayutyunner.html">Հայտարարություններ</a>
+        <a href="zexcher.html">Զեղչեր</a>
+        <a href="mermasin.html">Մեր մասին</a>
+      </nav>
+      <div class="header-actions">
+        <a href="carayutyunner.html" class="btn btn-primary">+ Ավելացնել տնակ</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-banner">
+      <div class="container">
+        <div class="promo-cards">
+          <div class="promo-card">-15% Զեղչ առաջին ամրագրման համար</div>
+          <div class="promo-card">-10% Զեղչ Ծաղկաձորում</div>
+          <div class="promo-card">-5% Զեղչ Սևանի ափին</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="section-title">
+        <h2>Թեժ Առաջարկներ</h2>
+      </div>
+      <div class="cottages-grid" id="featuredGrid"></div>
+    </section>
+  </main>
+
+  <section class="add-banner-section">
+    <div class="container">
+      <div class="banner-box">
+        <h2>ՏԵՂԱԴՐԵԼ ՀԱՅՏԱՐԱՐՈՒԹՅՈՒՆ</h2>
+        <p>Մուտքագրեք ձեր տվյալները նշված դաշտերում և մենք կկապնվենք Ձեզ հետ</p>
+        <form class="banner-form">
+          <input type="text" placeholder="Անուն Ազգանուն" required>
+          <input type="tel" placeholder="Հեռախոսահամար" required>
+          <input type="email" placeholder="Էլ․ հասցե" required>
+          <button type="submit" class="btn btn-orange">Ուղարկել</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="dark-footer">
+    <div class="container">
+      <h2 class="footer-title">ԿՈՆՏԱԿՏՆԵՐ</h2>
+      <div class="footer-info">
+        <span><i class="fa-solid fa-phone"></i> 041-611-611</span>
+        <span><i class="fa-solid fa-envelope"></i> amaranoc.info@gmail.com</span>
+        <span><i class="fa-brands fa-instagram"></i> amaranoc.am</span>
+        <span><i class="fa-brands fa-facebook"></i> amaranoc.am</span>
+      </div>
+      <div class="footer-privacy"><a href="#">Գաղտնիության քաղաքականություն</a></div>
+      <div class="footer-bottom-text">Ամառանոց ՍՊԸ | Amaranoc LLC</div>
+    </div>
+  </footer>
+
+  <div class="modal" id="bookingModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Ամրագրել Ամառանոցը</h2>
+      <p id="modalCottageTitle" class="modal-subtitle"></p>
+      <form id="bookingForm">
+        <div class="form-group"><label>Անուն, Ազգանուն</label><input type="text" required></div>
+        <div class="form-group"><label>Հեռախոսահամար</label><input type="tel" required></div>
+        <button type="submit" class="btn btn-primary full-width">Հաստատել</button>
+      </form>
+    </div>
+  </div>
+
+  <script  src="./index.js"></script>
+</body>
+</html>

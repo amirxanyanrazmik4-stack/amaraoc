@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amaranoc.am - Հայտարարություններ</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Amaranoc<span>.am</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Գլխավոր</a>
+        <a href="carayutyunner.html" class="active">Հայտարարություններ</a>
+        <a href="zexcher.html">Զեղչեր</a>
+        <a href="mermasin.html">Մեր մասին</a>
+      </nav>
+      <div class="header-actions">
+        <a href="carayutyunner.html" class="btn btn-primary">+ Ավելացնել տնակ</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-layout">
+    <aside class="sidebar-filter">
+      <h3>Ֆիլտրեր</h3>
+      <div class="filter-box">
+        <label class="filter-label">Տարածաշրջան</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="Ծաղկաձոր" class="filter-region"> Ծաղկաձոր</label>
+          <label><input type="checkbox" value="Դիլիջան" class="filter-region"> Դիլիջան</label>
+          <label><input type="checkbox" value="Գառնի" class="filter-region"> Գառնի</label>
+          <label><input type="checkbox" value="Սևան" class="filter-region"> Սևան</label>
+        </div>
+      </div>
+
+      <div class="filter-box">
+        <label class="filter-label">Առավելագույն Գին (֏)</label>
+        <input type="range" id="priceRange" min="30000" max="150000" step="5000" value="150000">
+        <div class="price-val"><span id="priceVal">150,000</span> ֏</div>
+      </div>
+
+      <div class="filter-box">
+        <label class="filter-label">Սենյակների քանակ</label>
+        <select id="roomsSelect">
+          <option value="all">Բոլորը</option>
+          <option value="2">2+ սենյակ</option>
+          <option value="4">4+ սենյակ</option>
+          <option value="6">6+ սենյակ</option>
+        </select>
+      </div>
+
+      <div class="filter-box">
+        <label class="filter-label">Հարմարություններ</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="Լողավազան" class="filter-feature"> Լողավազան</label>
+          <label><input type="checkbox" value="Բուխարի" class="filter-feature"> Բուխարի</label>
+          <label><input type="checkbox" value="Սաունա" class="filter-feature"> Սաունա</label>
+          <label><input type="checkbox" value="Մանղալ" class="filter-feature"> Մանղալ</label>
+        </div>
+      </div>
+
+      <button class="btn btn-outline full-width" id="resetFilters">Մաքրել Ֆիլտրերը</button>
+    </aside>
+
+    <section class="content-area">
+      <div style="margin-bottom: 25px; background: white; padding: 25px; border-radius: 8px; border: 1px solid var(--border);">
+        <h2 style="margin-bottom: 15px;">Ավելացնել Նոր Հայտարարություն</h2>
+        <form id="newListingForm">
+          <div class="form-group"><label>Անվանում</label><input type="text" id="newTitle" required></div>
+          <div class="form-row">
+            <div class="form-group"><label>Տարածաշրջան</label>
+              <select id="newRegion">
+                <option value="Ծաղկաձոր">Ծաղկաձոր</option>
+                <option value="Դիլիջան">Դիլիջան</option>
+                <option value="Գառնի">Գառնի</option>
+                <option value="Սևան">Սևան</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Գին</label><input type="number" id="newPrice" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Սենյակներ</label><input type="number" id="newRooms" required></div>
+            <div class="form-group"><label>Հարմարություններ</label><input type="text" id="newFeatures" placeholder="Լողավազան, Մանղալ" required></div>
+          </div>
+          <div class="form-group"><label>Նկարի URL</label><input type="url" id="newImage" required></div>
+          <button type="submit" class="btn btn-primary full-width">Հրապարակել</button>
+        </form>
+      </div>
+
+      <div class="cottages-grid" id="allListingsGrid"></div>
+    </section>
+  </main>
+
+  <footer class="dark-footer" style="margin-top: 50px;">
+    <div class="container">
+      <h2 class="footer-title">ԿՈՆՏԱԿՏՆԵՐ</h2>
+      <div class="footer-info">
+        <span><i class="fa-solid fa-phone"></i> 041-611-611</span>
+        <span><i class="fa-solid fa-envelope"></i> amaranoc.info@gmail.com</span>
+      </div>
+      <div class="footer-bottom-text">Ամառանոց ՍՊԸ | Amaranoc LLC</div>
+    </div>
+  </footer>
+
+  <div class="modal" id="bookingModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Ամրագրել</h2>
+      <form id="bookingForm">
+        <div class="form-group"><label>Անուն</label><input type="text" required></div>
+        <div class="form-group"><label>Հեռախոս</label><input type="tel" required></div>
+        <button type="submit" class="btn btn-primary full-width">Հաստատել</button>
+      </form>
+    </div>
+  </div>
+
+  <script  src="./carayutyunner.js"></script>
+</body>
+</html>
